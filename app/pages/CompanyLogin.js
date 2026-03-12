@@ -9,7 +9,10 @@ const CompanyLogin = ({navigation}) => {
 
   return (
     <ScrollView style={{ height: "100%" }}>
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center",
+backgroundColor:"#f3f0f8",
+
+paddingTop:80 }}>
 
         <Text style={{ fontSize: 24, fontWeight: "bold" }}>
           Login

@@ -1,9 +1,9 @@
-import { StyleSheet, Text, View } from 'react-native'
+import {  Text, View } from 'react-native'
 import React from 'react'
 
 const Profile = () => {
   return (
-    <View>
+    <View style={{flex:1, backgroundColor:"#f3f0f8"}}>
       <Text>Profile</Text>
     </View>
   )
@@ -11,4 +11,3 @@ const Profile = () => {
 
 export default Profile
 
-const styles = StyleSheet.create({})
