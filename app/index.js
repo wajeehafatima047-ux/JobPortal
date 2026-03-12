@@ -203,6 +203,7 @@ import CompanyLogin from "./pages/CompanyLogin";
 import CreateAccountCompany from "./pages/CreateAccountCompany";
 import Profile from "./pages/Profile";
 import BottomTab from "./Tabs/BottomTab";
+import Message from './pages/Message'
 
 const Stack = createNativeStackNavigator();
 
@@ -219,7 +220,10 @@ export default function App() {
             <Stack.Screen name="BottomTab" component={BottomTab} />
       <Stack.Screen name="Home" component={Home} />
 
+       <Stack.Screen name="Message" component={Message}/>
+
          <Stack.Screen name="Profile" component={Profile} />
+        
 
     </Stack.Navigator>
   );
