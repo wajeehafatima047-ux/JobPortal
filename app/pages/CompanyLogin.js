@@ -55,7 +55,7 @@ const CompanyLogin = ({navigation}) => {
           style={{
             width: "20%",
             height: 30,
-            backgroundColor: "blue",
+            backgroundColor: "#5a31f4",
             borderRadius: 10,
             marginTop: 40,
             justifyContent: "center",
@@ -75,7 +75,7 @@ const CompanyLogin = ({navigation}) => {
           style={{
             width: "50%",
             height: 50,
-            backgroundColor: "blue",
+            backgroundColor:"#5a31f4",
             borderRadius: 10,
             marginTop: 40,
             justifyContent: "center",
