@@ -197,32 +197,50 @@
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./pages/Home";
+import HomeEmp from "./pages/HomeEmp";
+import SignUpEmp from "./pages/SignUpEmp";
+
 import RoleSelectScreen from "./pages/RoleSelectScreen";
 import JobSeekerLogin from "./pages/JobSeekerLogin";
 import CompanyLogin from "./pages/CompanyLogin";
 import CreateAccountCompany from "./pages/CreateAccountCompany";
 import Profile from "./pages/Profile";
+import ProfileEmp from "./pages/ProfileEmp";
 import BottomTab from "./Tabs/BottomTab";
-import Message from './pages/Message'
+import BottomTabEmp from "./Tabs/BottomTabEmp";
+import Message from './pages/Message';
+import MessageEmp from './pages/MessageEmp';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <Stack.Navigator initialRouteName="RoleSelectScreen">
+
+                            {/* Company screen */}
+
       <Stack.Screen name="RoleSelectScreen" component={RoleSelectScreen} />
 
-       <Stack.Screen name="JobSeekerLogin" component={JobSeekerLogin} /> 
+       
        <Stack.Screen name="CompanyLogin" component={CompanyLogin} /> 
 
       <Stack.Screen name="CreateAccountCompany" component={CreateAccountCompany} />
 
             <Stack.Screen name="BottomTab" component={BottomTab} />
       <Stack.Screen name="Home" component={Home} />
-
-       <Stack.Screen name="Message" component={Message}/>
-
+          <Stack.Screen name="Message" component={Message}/>
          <Stack.Screen name="Profile" component={Profile} />
+
+                 {/* employee screen */}
+<Stack.Screen name="JobSeekerLogin" component={JobSeekerLogin} /> 
+  <Stack.Screen name="SignUpEmp" component={SignUpEmp} />
+
+      <Stack.Screen name="BottomTabEmp" component={BottomTabEmp} />
+      <Stack.Screen name="HomeEmp" component={HomeEmp} />
+       <Stack.Screen name="MessageEmp" component={MessageEmp}/>
+         <Stack.Screen name="ProfileEmp" component={ProfileEmp} />
+
+   
         
 
     </Stack.Navigator>
