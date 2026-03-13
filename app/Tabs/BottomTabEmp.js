@@ -4,9 +4,10 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeEmp from "../pages/HomeEmp";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import ProfileEmp from "../pages/ProfileEmp";
-import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+
 import MessageEmp from "../pages/MessageEmp";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
+// import AntDesign from '@expo/vector-icons/AntDesign';
 
 const Tab = createBottomTabNavigator();
 
@@ -26,11 +27,7 @@ export default function BottomTabEmp() {
       <Tab.Screen
         options={{
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons
-              name="message-text-outline"
-              size={24}
-              color="black"
-            />
+            <AntDesign name="message" size={24} color="black" />
           ),
         }}
         name="Message"
@@ -40,7 +37,7 @@ export default function BottomTabEmp() {
       <Tab.Screen
         options={{
           tabBarIcon: ({ color }) => (
-            <FontAwesome6 name="person" size={24} color={color} />
+         <MaterialIcons name="account-circle" size={24} color="black" />
           ),
         }}
         name="Account"

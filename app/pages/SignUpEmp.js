@@ -10,12 +10,26 @@ const SignUpEmp = ({navigation}) => {
     paddingTop:80 }}>
     
             <Text style={{ fontSize: 24, fontWeight: "bold" }}>
-              Login
+               SignUp
             </Text>
     
             <Text style={{ color: "grey" }}>
-              Please Login to your registered account
+              Please registered form below
             </Text>
+
+                {/* Name Field */}
+                    <TextInput
+                      placeholder="Name"
+                      style={{
+                        borderWidth: 1,
+                        width: "80%",
+                        height: 50,
+                        borderRadius: 10,
+                        marginTop: 40,
+                        backgroundColor: "white",
+                        paddingLeft: 10,
+                      }}
+                    />
     
             {/* Email Field */}
             <TextInput
