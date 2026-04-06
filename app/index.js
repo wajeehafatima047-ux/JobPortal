@@ -210,14 +210,17 @@ import BottomTab from "./Tabs/BottomTab";
 import BottomTabEmp from "./Tabs/BottomTabEmp";
 import Message from './pages/Message';
 import MessageEmp from './pages/MessageEmp';
+import ApplyJobForm from "./pages/ApplyJobForm";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <Stack.Navigator initialRouteName="RoleSelectScreen">
+    <Stack.Navigator initialRouteName="ApplyJobForm">
 
                             {/* Company screen */}
+
+                             <Stack.Screen name="ApplyJobForm" component={ApplyJobForm} />
 
       <Stack.Screen name="RoleSelectScreen" component={RoleSelectScreen} />
 
@@ -234,11 +237,13 @@ export default function App() {
                  {/* employee screen */}
 <Stack.Screen name="JobSeekerLogin" component={JobSeekerLogin} /> 
   <Stack.Screen name="SignUpEmp" component={SignUpEmp} />
+   
 
       <Stack.Screen name="BottomTabEmp" component={BottomTabEmp} />
       <Stack.Screen name="HomeEmp" component={HomeEmp} />
        <Stack.Screen name="MessageEmp" component={MessageEmp}/>
          <Stack.Screen name="ProfileEmp" component={ProfileEmp} />
+       
 
    
         
