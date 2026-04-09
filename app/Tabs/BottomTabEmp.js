@@ -5,6 +5,8 @@ import HomeEmp from "../pages/HomeEmp";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import ProfileEmp from "../pages/ProfileEmp";
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import interview from"../pages/interview";
+
 
 import MessageEmp from "../pages/MessageEmp";
 // import AntDesign from '@expo/vector-icons/AntDesign';
@@ -33,6 +35,25 @@ export default function BottomTabEmp() {
         name="Message"
         component={MessageEmp}
       />
+
+
+
+      
+      <Tab.Screen
+        options={{
+          tabBarIcon: ({ color }) => (
+           <MaterialIcons name="meeting-room" size={24} color="black" />
+          ),
+        }}
+        name="interview"
+        component={interview}
+      />
+      
+
+     
+
+
+
 
       <Tab.Screen
         options={{

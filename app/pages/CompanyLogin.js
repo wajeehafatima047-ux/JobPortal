@@ -54,7 +54,7 @@ paddingTop:80 }}>
 
                  {/* LogiN Button  */}
          <TouchableOpacity
-           onPress={()=>{navigation.navigate("BottomTab")}}
+          //  onPress={()=>{navigation.navigate("BottomTab")}}
           style={{
             width: "20%",
             height: 30,
