@@ -1,11 +1,37 @@
 
-import React from "react";
+import React ,{useState}from "react";
 import { View, Text, ScrollView, TextInput, TouchableOpacity } from "react-native";
 import { useRouter } from "expo-router";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase.config";
 
 const CompanyLogin = ({navigation}) => {
+const [Name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSignup = () => {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        alert("User registered successfully ✅");
+
+        setEmail("");
+        setPassword("");
+        setName("");
+
+        navigation.navigate("BottomTab"); // move after success
+      })
+      .catch((error) => {
+        setErrorMessage(error.message);
+      });
+  };
 
 
+
+  
+ 
 
   return (
     <ScrollView style={{ height: "100%" }}>
@@ -25,6 +51,8 @@ paddingTop:80 }}>
         {/* Email Field */}
         <TextInput
           placeholder="Email"
+          value={email}
+          onChangeText={setEmail}
           style={{
             borderWidth: 1,
             width: "80%",
@@ -39,6 +67,8 @@ paddingTop:80 }}>
         {/* Password Field */}
         <TextInput
           placeholder="Password"
+          value={password}
+          onChangeText={setPassword}
           secureTextEntry
           style={{
             borderWidth: 1,
@@ -51,10 +81,15 @@ paddingTop:80 }}>
           }}
         />
 
+         {/* Error Message */}
+                {errorMessage ? (
+                  <Text style={{ color: "red", marginTop: 10 }}>{errorMessage}</Text>
+                ) : null}
+
 
                  {/* LogiN Button  */}
          <TouchableOpacity
-          //  onPress={()=>{navigation.navigate("BottomTab")}}
+          onPress={handleLogIn}
           style={{
             width: "20%",
             height: 30,

@@ -1,10 +1,8 @@
-
 // import React,{useState} from "react";
 // import { View, Text, ScrollView, TextInput, TouchableOpacity } from "react-native";
 // import { useRouter } from "expo-router";
 // import createUserWithEmailAndPassword from 'firebase/auth';
 // import {auth} from '../firebase.cofig'
-
 
 // const CreateAccountCompany = ({navigation}) => {
 //   const [email,setEmail]=useState('');
@@ -19,8 +17,6 @@
 //           setEmail('');
 //             setPassword('');
 
-          
-
 //         })
 //         .catch((error)=>{
 //            const errorMsg=error.message;
@@ -28,8 +24,6 @@
 
 //         })
 //       }
-
-
 
 //   return (
 //     <ScrollView style={{ height: "100%" }}>
@@ -43,8 +37,6 @@
 //           Please registered form below
 //         </Text>
 
-
-        
 //         {/* Name Field */}
 //         <TextInput
 //           placeholder="Name"
@@ -89,7 +81,6 @@
 //             paddingLeft: 10,
 //           }}
 //         />
-
 
 //                  {/* LogiN Button  */}
 //          <TouchableOpacity
@@ -137,18 +128,19 @@
 
 // export default CreateAccountCompany';
 
-
-
-
-
-
-
 import React, { useState } from "react";
-import { View, Text, ScrollView, TextInput, TouchableOpacity } from "react-native";
+import {
+  View,
+  Text,
+  ScrollView,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase.config"
+import { auth } from "../firebase.config";
 
 const CreateAccountCompany = ({ navigation }) => {
+  const [Name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -161,6 +153,7 @@ const CreateAccountCompany = ({ navigation }) => {
 
         setEmail("");
         setPassword("");
+        setName("");
 
         navigation.navigate("BottomTab"); // move after success
       })
@@ -171,15 +164,35 @@ const CreateAccountCompany = ({ navigation }) => {
 
   return (
     <ScrollView style={{ height: "100%" }}>
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center", backgroundColor: "#f3f0f8" }}>
-
+      <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "#f3f0f8",
+        }}
+      >
         <Text style={{ fontSize: 24, fontWeight: "bold" }}>
           Create an Account
         </Text>
 
-        <Text style={{ color: "grey" }}>
-          Please register from below
-        </Text>
+        <Text style={{ color: "grey" }}>Please register from below</Text>
+
+        {/* Name Field */}
+        <TextInput
+          placeholder="Name"
+           value={Name}
+          onChangeText={setName}
+          style={{
+            borderWidth: 1,
+            width: "80%",
+            height: 50,
+            borderRadius: 10,
+            marginTop: 40,
+            backgroundColor: "white",
+            paddingLeft: 10,
+          }}
+        />
 
         {/* Email Field */}
         <TextInput
@@ -216,9 +229,7 @@ const CreateAccountCompany = ({ navigation }) => {
 
         {/* Error Message */}
         {errorMessage ? (
-          <Text style={{ color: "red", marginTop: 10 }}>
-            {errorMessage}
-          </Text>
+          <Text style={{ color: "red", marginTop: 10 }}>{errorMessage}</Text>
         ) : null}
 
         {/* Signup Button */}
@@ -234,9 +245,7 @@ const CreateAccountCompany = ({ navigation }) => {
             alignItems: "center",
           }}
         >
-          <Text style={{ fontSize: 20, color: "white" }}>
-            Sign Up
-          </Text>
+          <Text style={{ fontSize: 20, color: "white" }}>Sign Up</Text>
         </TouchableOpacity>
 
         <Text style={{ color: "grey", marginTop: 20 }}>
@@ -250,17 +259,11 @@ const CreateAccountCompany = ({ navigation }) => {
             marginTop: 10,
           }}
         >
-          <Text style={{ color: "#5a31f4", fontSize: 16 }}>
-            Login
-          </Text>
+          <Text style={{ color: "#5a31f4", fontSize: 16 }}>Login</Text>
         </TouchableOpacity>
-
       </View>
     </ScrollView>
   );
 };
 
 export default CreateAccountCompany;
-
-
-

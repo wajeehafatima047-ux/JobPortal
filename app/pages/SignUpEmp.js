@@ -1,7 +1,36 @@
 import { View, Text, ScrollView, TextInput, TouchableOpacity } from "react-native";
-import React from 'react'
+import React,{useState} from 'react'
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../firebase.config";
 
 const SignUpEmp = ({navigation}) => {
+
+const [Name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSignup = () => {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        alert("User registered successfully ✅");
+
+        setEmail("");
+        setPassword("");
+        setName("");
+
+        navigation.navigate("BottomTab"); // move after success
+      })
+      .catch((error) => {
+        setErrorMessage(error.message);
+      });
+  };
+
+
+
+
+
   return (
      <ScrollView style={{ height: "100%" }}>
           <View style={{ flex: 1, justifyContent: "center", alignItems: "center",
@@ -20,6 +49,8 @@ const SignUpEmp = ({navigation}) => {
                 {/* Name Field */}
                     <TextInput
                       placeholder="Name"
+                      value={Name}
+                      onChange={setName}
                       style={{
                         borderWidth: 1,
                         width: "80%",
@@ -34,6 +65,8 @@ const SignUpEmp = ({navigation}) => {
             {/* Email Field */}
             <TextInput
               placeholder="Email"
+              value={email}
+              onChangeText={setEmail}
               style={{
                 borderWidth: 1,
                 width: "80%",
@@ -48,6 +81,8 @@ const SignUpEmp = ({navigation}) => {
             {/* Password Field */}
             <TextInput
               placeholder="Password"
+              value={password}
+              onChangeText={setPassword}
               secureTextEntry
               style={{
                 borderWidth: 1,
@@ -59,11 +94,17 @@ const SignUpEmp = ({navigation}) => {
                 paddingLeft: 10,
               }}
             />
+
+             {/* Error Message */}
+                            {errorMessage ? (
+                              <Text style={{ color: "red", marginTop: 10 }}>{errorMessage}</Text>
+                            ) : null}
+            
     
     
                      {/* LogiN Button  */}
              <TouchableOpacity
-               onPress={()=>{navigation.navigate("BottomTabEmp")}}
+               onPress={handleSignup}
               style={{
                 width: "20%",
                 height: 30,
