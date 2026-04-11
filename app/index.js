@@ -213,6 +213,7 @@ import MessageEmp from './pages/MessageEmp';
 import ApplyJobForm from "./pages/ApplyJobForm";
 import interview from "./pages/interview";
 import JobDetail from "./pages/JobDetail";
+import Chat from "./pages/Chat";
 
 const Stack = createNativeStackNavigator();
 
@@ -250,6 +251,7 @@ export default function App() {
 
             <Stack.Screen name="interview" component={interview} />
             <Stack.Screen name="JobDetail" component={JobDetail} />
+            <Stack.Screen name="Chat" component={Chat} />
        
 
    

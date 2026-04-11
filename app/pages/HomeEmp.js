@@ -360,13 +360,14 @@ export default function HomeEmp({ navigation }) {
           key={index}
           style={styles.recentJob}
           onPress={() => navigation.navigate("JobDetail", { job })}
+
         >
           <View style={styles.logo}></View>
 
           <View>
             <Text style={styles.jobTitle}>{job}</Text>
-            <Text style={styles.salary}>$500 - $1,000</Text>
-            <Text>Location</Text>
+            <Text style={styles.salary}>$100 - $1,000</Text>
+            <Text>Location:Lahore</Text>
           </View>
         </TouchableOpacity>
       ))}

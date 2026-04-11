@@ -8,10 +8,10 @@ export default function JobDetail({ route,navigation }) {
     <View style={styles.container}>
       <Text style={styles.title}>{job}</Text>
       <Text style={styles.salary}>$500 - $1,000</Text>
-      <Text style={{ marginTop: 10 }}>Location: Pakistan</Text>
+      <Text style={{ marginTop: 10 }}>location:pakistan</Text>
 
       <TouchableOpacity   onPress={()=>{navigation.navigate("ApplyJobForm")}} style={styles.btn}>
-        <Text style={{ color: "#fff" }}>Apply Now</Text>
+        <Text style={{ color: "#fff" }}>  Apply Now  </Text>
       </TouchableOpacity>
     </View>
   );
