@@ -29,7 +29,7 @@ const CompanyLogin = ({ navigation }) => {
 
       alert("Login successful ✅");
 
-      navigation.navigate("BottomTabEmp");
+      navigation.navigate("BottomTab");
 
     } catch (error) {
       setErrorMessage(error.message);
