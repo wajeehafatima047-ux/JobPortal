@@ -253,7 +253,7 @@
 
 
 
-//figma design code
+// //figma design code
 
 
 
@@ -323,31 +323,7 @@ export default function HomeEmp({ navigation }) {
         </View>
       </View>
 
-      {/* Categories */}
-      <Text style={styles.sectionTitle}>Categories</Text>
-      <View style={styles.categories}>
-        {["⚡", "✏️", "📊", "🔤", "</>", "🗄️", "🔧", "💬"].map(
-          (item, index) => (
-            <View key={index} style={styles.categoryBox}>
-              <Text>{item}</Text>
-            </View>
-          )
-        )}
-      </View>
-
-      {/* Recommended */}
-      <Text style={styles.sectionTitle}>Recommended Jobs</Text>
-      <View style={styles.jobCard}>
-        <Image
-          source={{ uri: "https://via.placeholder.com/60" }}
-          style={styles.jobImage}
-        />
-        <View>
-          <Text style={styles.jobTitle}>Software Engineer</Text>
-          <Text>Jakarta, Indonesia</Text>
-          <Text style={styles.salary}>$500 - $1,000</Text>
-        </View>
-      </View>
+     
 
       {/* Recent Jobs */}
       <View style={styles.rowBetween}>
@@ -516,3 +492,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
 });
+
+
+
+
