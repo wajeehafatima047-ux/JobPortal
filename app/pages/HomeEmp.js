@@ -293,10 +293,10 @@ export default function HomeEmp({ navigation }) {
       <View style={styles.header}>
         <View>
           <Text style={styles.greeting}>Good Morning</Text>
-          <Text style={styles.name}>Henry Kanwil</Text>
+          <Text style={styles.name}>Wajeeha Saif</Text>
         </View>
         <Image
-          source={{ uri: "https://i.pravatar.cc/100" }}
+          source={{ uri: "" }}
           style={styles.profile}
         />
       </View>

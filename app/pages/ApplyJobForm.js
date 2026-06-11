@@ -142,6 +142,7 @@ const ApplyJobForm = () => {
         <TouchableOpacity style={styles.button}>
           <Text style={{ fontSize: 20, color: "white" }}>
             Apply Job
+            {alert("apply successfully")}
           </Text>
         </TouchableOpacity>
 

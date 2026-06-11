@@ -48,7 +48,7 @@ export default function CompanyProfile() {
       {/* Profile Header */}
       <View style={styles.header}>
         <Image
-          source={{ uri: "https://via.placeholder.com/100" }}
+          source={{ uri: "https://www.vecteezy.com/free-photos/cute-asian-teen" }}
           style={styles.logo}
         />
         <Text style={styles.companyName}>{companyName}</Text>

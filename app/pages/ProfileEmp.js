@@ -297,7 +297,7 @@ export default function ProfileEmp() {
           <View style={styles.profileWrapper}>
             <Image
               source={{
-                uri: "https://i.pravatar.cc/300?img=12",
+                uri: "https://www.vecteezy.com/free-photos/cute-asian-teen",
               }}
               style={styles.profileImage}
             />
@@ -306,7 +306,7 @@ export default function ProfileEmp() {
 
         {/* USER INFO */}
         <View style={styles.infoContainer}>
-          <Text style={styles.name}>Henry Kanwil</Text>
+          <Text style={styles.name}>Wajeeha Saif</Text>
 
           <Text style={styles.role}>
             Senior React Native Developer
